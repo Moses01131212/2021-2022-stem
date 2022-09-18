@@ -33,6 +33,7 @@ function light2 (light_number: number) {
 let mark = 0
 let light22: neopixel.Strip = null
 let strip: neopixel.Strip = null
+music.setVolume(127)
 music.startMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.OnceInBackground)
 // start
 strip = neopixel.create(DigitalPin.P2, 50, NeoPixelMode.RGB)
