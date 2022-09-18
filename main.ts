@@ -17,9 +17,10 @@ function light3 (num: number) {
     light22.showRainbow(1, 360)
     light22.rotate(num)
     basic.pause(num)
-    strip.show()
+    light22.clear()
+    light22.show()
 }
-function start (a: string, num: number, list: any[], sprite: game.LedSprite, bool: boolean, image: Image) {
+function start () {
     // start
     strip = neopixel.create(DigitalPin.P2, 50, NeoPixelMode.RGB)
     light22 = neopixel.create(DigitalPin.P1, 34, NeoPixelMode.RGB)
@@ -38,11 +39,7 @@ function light2 (light_number: number) {
 let light22: neopixel.Strip = null
 let strip: neopixel.Strip = null
 let mark = 0
-let image: Image = null
-let sprite: game.LedSprite = null
-let list: number[] = []
-// start
-start("abc", 1, list, sprite, true, image)
+start()
 basic.forever(function () {
     light3(100)
 })
