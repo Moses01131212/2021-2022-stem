@@ -15,10 +15,11 @@ input.onButtonPressed(Button.A, function () {
 function light3 (num: number) {
     // light
     light22.showRainbow(1, 360)
-    light22.rotate(num)
-    basic.pause(num)
-    light22.clear()
-    light22.show()
+    for (let index = 0; index < 50; index++) {
+        light22.rotate(num)
+        basic.pause(num)
+        light22.show()
+    }
 }
 function start () {
     // start
@@ -41,5 +42,6 @@ let strip: neopixel.Strip = null
 let mark = 0
 start()
 basic.forever(function () {
-    light3(100)
+    light3(300)
+    basic.pause(1000)
 })
