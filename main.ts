@@ -21,13 +21,6 @@ function light3 (num: number) {
         light22.show()
     }
 }
-function start () {
-    // start
-    strip = neopixel.create(DigitalPin.P2, 50, NeoPixelMode.RGB)
-    light22 = neopixel.create(DigitalPin.P1, 34, NeoPixelMode.RGB)
-    mark = 0
-    basic.showNumber(mark)
-}
 function light2 (light_number: number) {
     // light
     strip.showRainbow(1, 360)
@@ -37,11 +30,15 @@ function light2 (light_number: number) {
         strip.show()
     }
 }
+let mark = 0
 let light22: neopixel.Strip = null
 let strip: neopixel.Strip = null
-let mark = 0
-start()
-basic.forever(function () {
+music.startMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.OnceInBackground)
+// start
+strip = neopixel.create(DigitalPin.P2, 50, NeoPixelMode.RGB)
+light22 = neopixel.create(DigitalPin.P1, 34, NeoPixelMode.RGB)
+mark = 0
+basic.showNumber(mark)
+loops.everyInterval(1000, function () {
     light3(300)
-    basic.pause(1000)
 })
